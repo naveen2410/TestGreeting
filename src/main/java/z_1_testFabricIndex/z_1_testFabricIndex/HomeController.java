@@ -39,8 +39,12 @@ public class HomeController {
 
 	  @PostMapping("/greeting")
 	  public String greetingSubmit(@ModelAttribute Greeting greeting) {
-		  greeting.setContent("MII DATA - "+new TestMIIClient().executeGETService() );
-		  greeting.setId(1234);
+		  greeting.setIp(greeting.getIp()+greeting.getIp());
+		  greeting.setPort(greeting.getPort()+greeting.getPort());
+		  greeting.setUsername(greeting.getUsername()+greeting.getUsername());
+		  greeting.setPasswrd(greeting.getPasswrd()+greeting.getPasswrd());
+		  //greeting.setContent("MII DATA - "+new TestMIIClient().executeGETService() );
+		  //greeting.setId(1234);
 	    return "result";
 	  }
 }
