@@ -32,17 +32,22 @@ public class HomeController {
 	  public String greetingForm(Model model) {
 		//Greeting g = new Greeting();
 		
-	    model.addAttribute("greeting", new Greeting());
+	    model.addAttribute("greeting", new Result());
 	    
 	    return "greeting";// + new TestMIIClient().executeGETService();
 	  }
 
 	  @PostMapping("/greeting")
 	  public String greetingSubmit(@ModelAttribute Greeting greeting) {
-		  greeting.setIp(greeting.getIp()+greeting.getIp());
+		  
+		  Result result = new Result();
+		  result.setSchId("schId " + greeting.getIp());
+		  result.setSchName("schName " + greeting.getPort());
+		  
+		  /*greeting.setIp(greeting.getIp()+greeting.getIp());
 		  greeting.setPort(greeting.getPort()+greeting.getPort());
 		  greeting.setUsername(greeting.getUsername()+greeting.getUsername());
-		  greeting.setPasswrd(greeting.getPasswrd()+greeting.getPasswrd());
+		  greeting.setPasswrd(greeting.getPasswrd()+greeting.getPasswrd());*/
 		  //greeting.setContent("MII DATA - "+new TestMIIClient().executeGETService() );
 		  //greeting.setId(1234);
 	    return "result";
