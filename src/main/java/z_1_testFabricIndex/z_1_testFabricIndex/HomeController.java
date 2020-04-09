@@ -39,7 +39,7 @@ public class HomeController {
 
 	  @PostMapping("/greeting")
 	  public String greetingSubmit(@ModelAttribute Greeting greeting) {
-		  greeting.setContent("HOnalulu");
+		  greeting.setContent("MII DATA - "+new TestMIIClient().executeGETService() );
 		  greeting.setId(1234);
 	    return "result";
 	  }
