@@ -32,7 +32,7 @@ public class HomeController {
 	  public String greetingForm(Model model) {
 	    model.addAttribute("greeting", new Greeting());
 	    
-	    return "greeting " + new TestMIIClient().executeGETService();
+	    return "<html><body><h1>greeting</h1></body></html>";// + new TestMIIClient().executeGETService();
 	  }
 
 	  @PostMapping("/greeting")
