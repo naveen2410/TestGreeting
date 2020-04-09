@@ -30,7 +30,10 @@ public class HomeController {
 
 	@GetMapping("/greeting")
 	  public String greetingForm(Model model) {
-	    model.addAttribute("greeting", new Greeting());
+		Greeting g = new Greeting();
+		g.setContent("HOnalulu");
+		g.setId(1234);
+	    model.addAttribute("greeting", g);
 	    
 	    return "greeting";// + new TestMIIClient().executeGETService();
 	  }
