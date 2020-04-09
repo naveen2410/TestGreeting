@@ -32,7 +32,7 @@ public class HomeController {
 	  public String greetingForm(Model model) {
 		//Greeting g = new Greeting();
 		
-	    model.addAttribute("greeting", new Result());
+	    model.addAttribute("greeting", new Greeting());
 	    
 	    return "greeting";// + new TestMIIClient().executeGETService();
 	  }
