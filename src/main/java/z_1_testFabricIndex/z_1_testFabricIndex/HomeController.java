@@ -31,7 +31,8 @@ public class HomeController {
 	@GetMapping("/greeting")
 	  public String greetingForm(Model model) {
 	    model.addAttribute("greeting", new Greeting());
-	    return "greeting";
+	    
+	    return "greeting " + new TestMIIClient().executeGETService();
 	  }
 
 	  @PostMapping("/greeting")
